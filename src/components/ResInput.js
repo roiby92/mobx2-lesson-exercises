@@ -7,19 +7,24 @@ class ResInput extends Component {
     inputHandler = (e) => {
         this.props.GeneralStore.handleInput(e.target.name, e.target.value)
     }
-    render () {
+    render() {
+        const generalStore = this.props.GeneralStore
         return (
             <div>
-                <input onChange = {this.inputHandler} 
-                        name = "name"
-                        placeholder = "Name"/>
-                <input onChange = {this.inputHandler} 
-                        name = "numPeople"
-                        type = "number"
-                        placeholder = "Number of people"/> 
+                <input onChange={this.inputHandler}
+                    value={generalStore.name}
+                    name="name"
+                    placeholder="Name" />
+                <input onChange={this.inputHandler}
+                    value={generalStore.numPeople}
+                    name="numPeople"
+                    type="number"
+                    placeholder="Number of people" />
             </div>
-        )   
+        )
     }
 }
 
 export default ResInput
+
+
